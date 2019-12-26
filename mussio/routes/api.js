@@ -3,23 +3,44 @@ const router = express.Router();
 const faker = require('faker');
 /* GET users listing. */
 router.get('/popular', (req, res) => {
-  var cities = [         
+  var compositions = [         
     { 
-    	"name": faker.name.title(),
-    	"id": "1"
+    	"name": faker.lorem.word(),
+    	"image": faker.image.nightlife()
     },
-    	   { 
-    	"name": faker.name.title(),
-    	"id": "2"
+    { 
+    	"name": faker.lorem.word(),
+    	"image": faker.image.abstract()
     },
-    	  { 
-    	"name": faker.name.title(),
-    	"id": "3"
+    { 
+    	"name": faker.lorem.word(),
+    	"image": faker.image.technics()
+    },
+    { 
+    	"name": faker.lorem.word(),
+    	"image": faker.image.abstract()
+    },
+    { 
+    	"name": faker.lorem.word(),
+    	"image": faker.image.fashion()
+    },
+    { 
+    	"name": faker.lorem.word(),
+    	"image": faker.image.people()
+    },
+    { 
+    	"name": faker.lorem.word(),
+    	"image": faker.image.abstract()
+    },
+    { 
+    	"name": faker.lorem.word(),
+    	"image": faker.image.business()
     }];
+    
 
     var timeFrames = ["Today", "This week", "This month", "This year"];
 
-	res.render('popular',{"timeFrames": timeFrames});
+	res.render('popular',{"timeFrames": timeFrames, "compositions": compositions});
 });
 
 module.exports = router;
