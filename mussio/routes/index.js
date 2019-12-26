@@ -19,6 +19,5 @@ router.get('/ads', (req, res) => {
     		"image": faker.image.nightlife()
     	}];
  
-res.render('index',{"ads": ads});
+res.render('ads',{"ads": ads});
  }); 
-

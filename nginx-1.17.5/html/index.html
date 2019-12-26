@@ -107,8 +107,10 @@ header ul li
 }
 a {color: white; text-decoration: none;}
 nav {text-align: right;	margin-left: 50%;}
-.ads {float right;
-position: fixed; width: 20%;}
+.ads {float left;
+position: fixed; }
+
+.ads p {font-size: 20px; font-color: #67fff3; font-family: OpenSans-Semibold;}
 		</style>
 </head>
 <body>
@@ -121,9 +123,9 @@ position: fixed; width: 20%;}
 		<button><span>sign up</span></button>
 
 	<div class="genres"></div>
-	<div class="date"> </div>
-	<div class="ads	"> </div>
-	<!--#include virtual="/api/ads"-->
+	<div style="background-color: #000;" class="date"><!--#include virtual="/api/popular"--></div>
+	<div class="ads"><!--#include virtual="/api/ads"--></div>
+	
 	</body>
 </html>
 

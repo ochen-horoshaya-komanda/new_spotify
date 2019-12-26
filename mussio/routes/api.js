@@ -43,4 +43,22 @@ router.get('/popular', (req, res) => {
 	res.render('popular',{"timeFrames": timeFrames, "compositions": compositions});
 });
 
+router.get('/ads', (req, res) => {
+    var ads = 
+    	[{
+    		"name": faker.name.title(),
+    		"image": faker.image.nightlife()
+    	},
+    	{
+    		"name": faker.name.title(),
+    		"image": faker.image.nightlife()
+    	},
+    	{
+    		"name": faker.name.title(),
+    		"image": faker.image.nightlife()
+    	}];
+ 
+res.render('ads',{"ads": ads});
+ }); 
+
 module.exports = router;
