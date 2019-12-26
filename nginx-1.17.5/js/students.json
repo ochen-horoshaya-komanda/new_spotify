@@ -1,0 +1,40 @@
+{
+    "students": [
+        {
+            "name": "Ivan",
+            "surname": "Ivanov",
+            "group": "1",
+            "missLesson": "10"
+        },
+        {
+            "name": "Ivan",
+            "surname": "Ivanov",
+            "group": "2",
+            "missLesson": "4"
+        },
+        {
+            "name": "Ivan",
+            "surname": "Ivanov",
+            "group": "3",
+            "missLesson": "6"
+        },
+        {
+            "name": "Ivan",
+            "surname": "Ivanov",
+            "group": "3",
+            "missLesson": "1"
+        },
+        {
+            "name": "Ivan",
+            "surname": "Ivanov",
+            "group": "4",
+            "missLesson": "15"
+        },
+        {
+            "name": "Ivan",
+            "surname": "Ivanov",
+            "group": "5",
+            "missLesson": "0"
+        }
+    ]
+} 
