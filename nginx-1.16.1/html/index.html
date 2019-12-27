@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			@font-face {
+    font-family: Belinda; 
+    src: url(fonts/belinda.otf)
+}
+@font-face {
+    font-family: Ubunto;
+    src:url(fonts/UbuntuMono-B.ttf);
+}
+@font-face {
+    font-family: PT-Sans-Bold;
+    src:url(.fonts/PT-Sans-Bold.ttf);
+}
+@font-face{
+   	font-family: OpenSans-Semibold;
+   	src: url(fonts/OpenSans-Semibold.ttf);
+}
+@font-face {
+	font-family: PT-Sans-Regular;
+ 	src: url(fonts/PT-Sans-Regular.ttf);
+}
+ @font-face {
+	font-family: Nexa Bold;
+ 	src: url(fonts/Nexa Bold.otf);
+}
+@font-face {
+	font-family: Nexa Light;
+ 	src: url(fonts/Nexa Light.otf);
+}
+@font-face {
+	font-family: cabin;
+ 	src: url(fonts/cabin.regular.ttf);
+}
+body
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+
+}
+.s {width: 300px;}
+header
+{
+	margin-bottom: 80px;
+	width: 100%;
+	color: #fff;
+	background-image: url("bckg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0;
+	height: 100vh;
+}
+header p
+{
+	font-family: Belinda;
+	font-size: 80px;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+header h2
+{
+	margin-top: 40px;
+  	font-size: 46px; 
+  	text-transform: uppercase;
+  	font-family: PT-Sans-Bold;
+  	color: #ff0066;
+}
+
+header button, .btn
+{
+	
+	color: #fff;
+	background-color: #db4cab;
+	
+	padding: 10px;
+	height: 60px;
+	border-radius: 30px;
+	border: none;
+	font-size: 15px;
+    font-family: PT-Sans-Bold;
+    text-transform: uppercase;
+    
+}
+button {width: 18%;}
+form {margin: 0 auto;}
+select {
+	color: #e6a947;
+	background-color: #edf4fa;
+	display: inline;
+	padding: 10px;
+	height: 60px;
+	border-radius: 30px;
+	border: none;
+	font-size: 15px; margin-right: 10%; margin-left: 26%;}
+header img {width: 20%;}
+header button:hover
+{
+	background-color:#2cbda2;
+}
+header ul
+{
+	font-size: 24px;
+	font-family: OpenSans-Semibold;
+}
+
+header li
+{
+	list-style:none;
+}
+header ul li
+{
+	display:inline;
+	margin-right: 20px;
+}
+a {color: white; text-decoration: none;}
+nav {text-align: right;	margin-left: 50%;}
+.ads { display: flex;flex-flow: row wrap; color: #ccc;}
+.genres {color: #ff5ae2; display: inline; padding: 10px;}
+p {width: 300px;}
+.ads p {font-size: 20px; font-color: #67fff3; font-family: OpenSans-Semibold; }
+.date p{font-size: 20px; font-color: #67fff3; font-family: OpenSans-Semibold;}
+.date {background-color: pink; padding:10px; width: 90vw; display: flex;flex-flow: row wrap;}
+form {background-color: pink;}
+		</style>
+</head>
+<body>
+	<header id="the-header">
+		<nav > <ul> <a href="#"><li> my page </li></a> <input type="text" required placeholder="search"> </nav>
+	<p>mussio</p>
+
+		<img src="cat.jpg">
+		<h2>best music for you</h2>
+		<button><span>sign up</span></button>
+
+	<div class="genres"></div>
+	<div class="date"><!--#include virtual="/api/popular"--></div>
+	<div class="ads"><!--#include virtual="/api/ads"--></div>
+	<div id="genres" class="genres">0</div>
+</body>
+<template id="template">
+  <div style="display: inline;  padding-left: 30%; ">
+  	  {{#each songs}}
+		<div style="display: inline; padding: 10px;   " >
+			<img src="{{image}}"   style="padding: 5px; width: 10%;">
+
+
+		</div>
+	{{/each}}
+  </div>
+</template>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.js"></script>
+<script>
+	var template = document.getElementById('template').innerHTML;
+	var renderSongs = Handlebars.compile(template);
+	var songs = [         
+    { 
+    	
+    	"image": "rock.png"
+    },
+    { 
+    	
+    	"image": "reggae.png"
+    },
+    { 
+    	
+    	"image": "folk.png"
+    },
+    { 
+    	
+    	"image": "classic.png"
+    } ];
+	document.getElementById('genres').innerHTML = renderSongs({songs: songs});
+</script>
+</html>
+

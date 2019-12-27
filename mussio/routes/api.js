@@ -46,15 +46,15 @@ router.get('/popular', (req, res) => {
 router.get('/ads', (req, res) => {
     var ads = 
     	[{
-    		"name": faker.name.title(),
+    		"name": faker.random.words(),
     		"image": faker.image.nightlife()
     	},
     	{
-    		"name": faker.name.title(),
+    		"name": faker.random.words(),
     		"image": faker.image.nightlife()
     	},
     	{
-    		"name": faker.name.title(),
+    		"name": faker.random.words(),
     		"image": faker.image.nightlife()
     	}];
  

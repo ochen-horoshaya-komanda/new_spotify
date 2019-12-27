@@ -1,17 +1,20 @@
-<form>
+<form width="100vw">
 	<select name="time-frame">
 	{{#each timeFrames}}
   		<option>{{this}}</option>
 	{{/each}}
 	</select>
 
-	<input type="submit" value="Count time">
+	<input type="submit" value="choose" class="btn">
 </form>
 
-
+<div class="date">
 {{#each compositions}}
-		<div>
-			<img src="{{image}}">
-			<p>{{name}}</p>
-		</div>
+		
+			<div class="s">
+				<img src="{{image}}">
+				<p>{{name}}</p>
+			</div>	
+		
 {{/each}}
+</div>
